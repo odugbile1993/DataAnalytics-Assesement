@@ -69,7 +69,7 @@ Helpful Tip:
 I tested the date formatting separately to make sure monthly grouping worked right.
 
 3. Flagging Inactive Accounts
-4. 
+   
 The Task:
 Find accounts with no transactions in over a year.
 
