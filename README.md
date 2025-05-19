@@ -88,12 +88,14 @@ Challenge:
 I initially looked for an is_active flag in the wrong table. Double-checking the schema fixed this.
 
 4. Calculating Customer Lifetime Value
+   
 The Objective:
 Estimate how valuable each customer is based on their transaction history.
 
 The Formula:
 
 (Total Transactions ÷ Months as Customer) × 12 × (0.1% of Their Total Deposits)
+
 Key Points:
 
 Handled new customers (avoiding divide-by-zero errors)
@@ -108,14 +110,15 @@ Validation:
 I spot-checked several customers with hand calculations to verify the results.
 
 Challenges & Learnings
-Schema Surprises
+
+Schema Surprises:
 I learned to always check table structures first - assumptions about column names can be wrong!
 
-Date Calculations
+Date Calculations:
 Date functions vary by SQL dialect. I stuck with MySQL's DATE_FORMAT and DATEDIFF for consistency.
 
-Edge Cases Matter
+Edge Cases Matter:
 Nearly missed handling new customers in the CLV calculation. Adding NULLIF saved the day.
 
-Verification is Key
+Verification is Key:
 For each query, I wrote simple test queries to verify parts of the calculation.
